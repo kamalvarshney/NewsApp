@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
-
-    changeCategory= async (value)=>{
-        console.log(value);
-        this.props.changeNewsCategory(value);
-    }
     
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand mx-2" to="/">
-            NewsApp
+            NEWSAPP
           </Link>
           <button
             className="navbar-toggler"
@@ -31,7 +26,7 @@ export default class Navbar extends Component {
             <ul className="navbar-nav mr-auto" style={{marginRight:'auto'}}>
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  About
+                  HOME
                 </Link>
               </li>
               <li className="nav-item">
