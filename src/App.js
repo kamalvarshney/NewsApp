@@ -15,7 +15,7 @@ function App() {
     <Router>
     <Navbar/>
     <Routes>
-    <Route exact path="/" element={<News key='general' pageSize={pageSize} country="in" category='general'/>} />
+    <Route exact path="/" element={<News key='home' pageSize={pageSize} country="in" category='general'/>} />
     <Route exact path="/general" element={<News key='general' pageSize={pageSize} country="in" category='general'/>} />
     <Route exact path="/sports"  element={<News key='sports' pageSize={pageSize} country="in" category='sports'/>} />
     <Route exact path="/science" element={<News key='science' pageSize={pageSize} country="in" category='science'/>} />
