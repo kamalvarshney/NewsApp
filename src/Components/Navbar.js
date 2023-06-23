@@ -2,11 +2,24 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
-    
+  
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      inputValue: ''
+    };
+  }
+  updateInputValue = (evt)=>{
+    const val = evt.target.value;
+    console.log(val);
+    this.setState({inputValue: val});
+  }
+  
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
           <Link className="navbar-brand mx-2" to="/">
             NEWSAPP
           </Link>
@@ -71,13 +84,16 @@ export default class Navbar extends Component {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                value={this.state.inputValue}
+                onChange={evt => this.updateInputValue(evt)}
               />
-              <button
+              <Link 
                 className="btn btn-outline-success my-2 my-sm-0 mx-2"
                 type="submit"
+                to={this.state.inputValue}
               >
                 Search
-              </button>
+              </Link>
             </form>
           </div>
         </nav>
